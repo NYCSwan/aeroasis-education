@@ -1,0 +1,20 @@
+.form-label {
+  font-family: sans-serif;
+  font-size: 20;
+  color: gray;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-flow: column wrap;
+  height: 200vmin;
+}
+
+.form-label.capitalize {
+  color: red;
+}
+
+.form-checkbox {
+  height: 10vmin;
+  width: 100vmin;
+}
