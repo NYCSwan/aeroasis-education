@@ -1,11 +1,31 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import logo from "./aeFullLogo.png";
+import FormContainer from "./components/forms/FormContainer";
+import Questionnaire from "./Questionnaire.json";
 import "./App.css";
 
 class App extends Component {
   state = {
     value: ""
   };
+
+  componentDidMount() {
+    // console.log(Questionnaire);
+    // const q = Questionnaire[0];
+    // try {
+    // return fetch("./public/Questionnaire.json")
+    //   .then(res => {
+    // debugger;
+    //     console.log("res", res);
+    //   })
+    //   .catch(e => {
+    //     console.log("e", e);
+    //   });
+    // } catch (e) {
+    //   console.log("e", e);
+    // } finally {
+    // }
+  }
 
   handleChange = e => {
     this.setState({ value: e.target.value });
@@ -14,6 +34,7 @@ class App extends Component {
   handleSubmit = e => {
     console.log("handle submit");
     e.preventDefault();
+    debugger;
   };
 
   render() {
@@ -21,128 +42,67 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Aeroasis Education Lesson 1: Student Questionnaire</h2>
-          <h4>
-            Answer the following questions about your eating habits and food
-            generally. There are no right answers when it comes to this quiz.
-            It's a chance to learn more about yourself!
-          </h4>
+          <h2>Aeroasis Education Lesson 1:</h2>
+          <h4>Student Questionnaire</h4>
         </header>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            How many times a day do you typically eat?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Where does most of your meals come from each week?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            If you looked in your fridge, would you see more
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            What is your favorite type of food to eat?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Where would you go to buy the ingredients for a hamburger? Choose
-            all that apply.
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            If you are at lunch, and are given milk, a chicken sandwich (or
-            veggie if you're a vegetarian), some pickles, and an apple, what do
-            you do with this food? Anything you don’t eat?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            If your family makes dinner at home, and there are lots of
-            leftovers, what does your family do with them?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            What is yourHow far do you think the average tomato will travel to
-            reach your supermarket?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            How does the food you eat affect you throughout your day?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Have you ever grown any plants before this class? If so tell us
-            about it?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            On a scale of 1 to 5, how much interest do you have in the following
-            subjects?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        <h4>
+          Answer the following questions about your eating habits and food
+          generally. There are no right answers when it comes to this quiz. It's
+          a chance to learn more about yourself!
+        </h4>
+        <FormContainer
+          questions={Questionnaire}
+          handleSubmit={this.handleSubmit}
+        />
+        <footer className="App-link">(C)2019 Aeroasis</footer>
       </div>
     );
   }
 }
 
 export default App;
+
+// Type of eater:
+// Question 1, give yourself 1 point if you marked answer 1 or 2. Give yourself 3 points if you marked answer 3, 4 or 5. Give yourself 4 points if you answered 6.
+// Question 2, give yourself 1 point if you marked answer 1. Give yourself 2 points if you marked answer 2. Give yourself 3 points if you marked answer 4 or 5.
+// Question 3, give yourself 1 point if you marked answer 1 or 2. Give yourself 2 points if you marked answer 3 or 4. Give yourself 3 points if you marked answer 5.
+// Question 5, give yourself 2 points if you marked answer 1,2 or 4. Give yourself 1 point if you marked answer 2 or 5.
+// Question 6, give yourself 3 points if you answered mostly ‘Eat it’. Give yourself 1 point if you answered mostly ‘Throw it away’. Give yourself 2 points if you answered mostly ‘Share with someone’.
+// Question 7 give yourself 3 points if you marked answer 1. Give yourself 1 point if you marked answer 2 or 5. Give yourself 2 points if you answered 3 or 4.
+//
+// Finally, add up all the points!
+//
+// Footprint:
+// Question 2:
+// 1 -- 4pts
+// 2 -- 4pts
+// 3 -- 1pt
+// 4 -- 2pts
+//
+// Question 3:
+// 1 -- 3pts
+// 2 -- 1pt
+// 3 -- 3pts
+// 4 -- 3pts
+//
+// Question  4:
+// 1 -- 2pts
+// 2 -- 4pts
+// 3 -- 1pt
+// 4 -- 4pts
+// 5 -- 3pts
+// 6 -- 4pts
+//
+// Question  5:
+// 1 -- 3pts
+// 2 -- 2pts
+// 3 -- 1pt
+// 4 -- 1pt
+// 5 -- 4pts
+//
+// Question 7:
+// 1 -- 1pt
+// 2 -- 4pts
+// 3 -- 1pt
+// 4 -- 1pt
+// 5 -- 1pt
