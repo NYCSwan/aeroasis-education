@@ -1,0 +1,28 @@
+.form-label {
+  align-self: flex-start;
+  text-align: left;
+  width: 20%;
+  font-size: 1em;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 3vmin;
+  width: 100%;
+  height: auto;
+}
+
+.checkbox-group.checkbox {
+  flex-direction: column;
+}
+
+.checkbox-group.radio {
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  font-size: 0.8em;
+  align-content: center;
+  justify-content: center;
+}
