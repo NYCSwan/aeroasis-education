@@ -1,41 +1,32 @@
-.checkbox-container-radio {
+.radio-container-radio {
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
   border-bottom: 1px solid black;
   margin-top: 1vmin;
 }
-.checkbox-container-checkbox {
-  flex-flow: column wrap;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 1vmin;
-  /* justify-content: space-between; */
-  margin-top: 1vmin;
-}
+
 .form-label {
   font-family: sans-serif;
   font-size: 20px;
   color: gray;
+  width: 20%;
 }
 
-.checkbox-group {
+.radio-group {
   display: flex;
   flex-flow: row nowrap;
-  height: 20vmin;
+  /* height: 20vmin; */
   width: 90%;
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
 
 .form-label.capitalize {
   color: black;
+  height: auto;
 }
 
-.form-checkbox {
+.form-radio {
   height: auto;
   /* width: 90%; */
 }
-
-/* .form-checkbox-q3 {
-
-} */

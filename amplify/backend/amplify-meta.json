@@ -1,0 +1,65 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "aeroasisedu-20190114120534-authRole",
+			"UnauthRoleArn": "arn:aws:iam::880058370616:role/aeroasisedu-20190114120534-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::880058370616:role/aeroasisedu-20190114120534-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "aeroasisedu-20190114120534-deployment",
+			"UnauthRoleName": "aeroasisedu-20190114120534-unauthRole",
+			"StackName": "aeroasisedu-20190114120534",
+			"StackId": "arn:aws:cloudformation:us-east-1:880058370616:stack/aeroasisedu-20190114120534/9b500930-181e-11e9-86f9-0a5c603a1bba"
+		}
+	},
+	"api": {
+		"aeroasisedu": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "apiwisei3rhbxb5q44ubnhezka",
+				"GraphQLAPIEndpointOutput": "https://ra3prejiczhc7hqf2xdozx66pq.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-jt75g5dfyzcajco74aa3espnlq"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/aeroasisedu-20190114120534-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiaeroasisedu"
+			},
+			"lastPushTimeStamp": "2019-01-14T19:02:11.478Z",
+			"lastPushDirHash": "ywe72+Nxkog0f1D2gTANZ3dKhaM="
+		}
+	},
+	"auth": {
+		"cognito84083612": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/aeroasisedu-20190114120534-deployment/amplify-cfn-templates/auth/cognito84083612-cloudformation-template.yml",
+				"logicalId": "authcognito84083612"
+			},
+			"lastPushTimeStamp": "2019-01-14T19:02:10.078Z",
+			"output": {
+				"IdentityPoolId": "us-east-1:51aa0424-789b-471f-b6e1-3c6f17ec47bc",
+				"IdentityPoolName": "aeroasisedu_identitypool_a0262349"
+			},
+			"lastPushDirHash": "5tW/NUIruHiHgoXE12h4yhmrlqk="
+		}
+	},
+	"analytics": {
+		"aeroasisedu": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/aeroasisedu-20190114120534-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+				"logicalId": "analyticsaeroasisedu"
+			},
+			"lastPushTimeStamp": "2019-01-14T19:02:10.083Z",
+			"output": {
+				"appName": "aeroasisedu",
+				"Region": "us-east-1",
+				"Id": "c1de9ac397b54cec8deaeb1bd774a076"
+			},
+			"lastPushDirHash": "oymjfSS92D+3ySthcbkjcc6b5bw="
+		}
+	}
+}

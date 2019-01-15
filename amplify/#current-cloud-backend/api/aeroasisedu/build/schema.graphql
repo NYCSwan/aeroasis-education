@@ -1,0 +1,152 @@
+type responses {
+  id: ID!
+  q0: String!
+  q1: String!
+  q2: String!
+  q3: String!
+  q4: String!
+  q5: [String]
+  q6: [String]
+  q7: String!
+  q8: String!
+  q9: [String]
+  q10: [String]
+  q11: [String]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelresponsesConnection {
+  items: [responses]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelresponsesFilterInput {
+  id: ModelIDFilterInput
+  q0: ModelStringFilterInput
+  q1: ModelStringFilterInput
+  q2: ModelStringFilterInput
+  q3: ModelStringFilterInput
+  q4: ModelStringFilterInput
+  q5: ModelStringFilterInput
+  q6: ModelStringFilterInput
+  q7: ModelStringFilterInput
+  q8: ModelStringFilterInput
+  q9: ModelStringFilterInput
+  q10: ModelStringFilterInput
+  q11: ModelStringFilterInput
+  and: [ModelresponsesFilterInput]
+  or: [ModelresponsesFilterInput]
+  not: ModelresponsesFilterInput
+}
+
+type Query {
+  getResponses(id: ID!): responses
+  listResponsess(filter: ModelresponsesFilterInput, limit: Int, nextToken: String): ModelresponsesConnection
+}
+
+input CreateResponsesInput {
+  id: ID
+  q0: String!
+  q1: String!
+  q2: String!
+  q3: String!
+  q4: String!
+  q5: [String]
+  q6: [String]
+  q7: String!
+  q8: String!
+  q9: [String]
+  q10: [String]
+  q11: [String]
+}
+
+input UpdateResponsesInput {
+  id: ID!
+  q0: String
+  q1: String
+  q2: String
+  q3: String
+  q4: String
+  q5: [String]
+  q6: [String]
+  q7: String
+  q8: String
+  q9: [String]
+  q10: [String]
+  q11: [String]
+}
+
+input DeleteResponsesInput {
+  id: ID
+}
+
+type Mutation {
+  createResponses(input: CreateResponsesInput!): responses
+  updateResponses(input: UpdateResponsesInput!): responses
+  deleteResponses(input: DeleteResponsesInput!): responses
+}
+
+type Subscription {
+  onCreateResponses: responses @aws_subscribe(mutations: ["createResponses"])
+  onUpdateResponses: responses @aws_subscribe(mutations: ["updateResponses"])
+  onDeleteResponses: responses @aws_subscribe(mutations: ["deleteResponses"])
+}

@@ -1,0 +1,16 @@
+projects:
+  aeroasisedu:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: apiwisei3rhbxb5q44ubnhezka
+      endpoints:
+        prod: >-
+          https://ra3prejiczhc7hqf2xdozx66pq.appsync-api.us-east-1.amazonaws.com/graphql

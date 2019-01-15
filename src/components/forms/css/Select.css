@@ -4,8 +4,7 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-top: 3vmin;
-  /* margin-left: 5%; */
-  /* margin-right: 5%; */
+  flex-flow: nowrap;
 }
 
 .form-select {

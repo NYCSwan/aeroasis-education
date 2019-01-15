@@ -1,9 +1,9 @@
-.form-group {
-  width: 100%;
-  margin-top: 3vmin;
-  display: flex;
-  flex-flow: column wrap;
-}
 .form-txtrea {
-  width: 100%;
+  width: 80%;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  font-size: 16;
+  outline: none;
 }

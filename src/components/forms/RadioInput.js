@@ -1,25 +1,25 @@
 import React from "react";
 import "./css/RadioInput.css";
 
-const CheckboxOrRadioGroup = props => (
+const RadioGroup = props => (
   <div
-    className={`checkbox-container-${props.type}`}
+    className={`radio-container-${props.type}`}
     key={`${props.id}${props.setName}`}
   >
     <label className="form-label">{props.setName}</label>
-    <div className={`checkbox-group ${props.type}`}>
+    <div className={`radio-group ${props.type}`}>
       {props.options.map((opt, idx) => {
-        // debugger;
+        const check = props.selectedOptions.filter(opt => opt[props.setName]);
+
         return (
           <label key={opt} className="form-label capitalize">
             <input
-              className={`form-checkbox ${props.id}`}
+              className={`form-radio ${props.id}`}
               name={props.setName}
               onChange={props.controlFunc}
               value={opt}
               checked={
-                props.selectedOptions[idx] &&
-                props.selectedOptions[idx][props.setName] === opt
+                check.hasOwnProperty([0]) && check[0][props.setName] === opt
               }
               type={props.type}
             />{" "}
@@ -31,7 +31,7 @@ const CheckboxOrRadioGroup = props => (
   </div>
 );
 
-// type CheckboxOrRadioGroup = {
+// type RadioGroup = {
 // title: String,
 // type: String,
 // setName: String,
@@ -40,4 +40,4 @@ const CheckboxOrRadioGroup = props => (
 // controlFunc: React.PropTypes.func.isRequired
 // };
 
-export default CheckboxOrRadioGroup;
+export default RadioGroup;
