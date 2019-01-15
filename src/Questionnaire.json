@@ -29,11 +29,12 @@
     "q3": {
       "question": "On a typical day, how often do you eat throughout the day?",
       "options": [
-        "One time",
-        "Twice",
+        "One meal",
+        "Two meals",
         "Three big meals",
         "Three small meals",
-        ""
+        "More than 3 big meals",
+        "More than 3 small meals"
       ]
     }
   },
@@ -50,7 +51,7 @@
   },
   {
     "q5": {
-      "question": "Where do most of your family's meals come from each week?",
+      "question": "Where do most of your meals come from each week?",
       "options": [
         {
           "Cook at home with fresh ingredients": [
@@ -61,6 +62,9 @@
             "4x",
             "5 or more"
           ]
+        },
+        {
+          "School cafeteria": ["0x", "1x", "2x", "3x", "4x", "5 or more"]
         },
         {
           "Fast food": ["0x", "1x", "2x", "3x", "4x", "5 or more"]
@@ -107,20 +111,14 @@
   },
   {
     "q8": {
-      "question": "QUESTION HERE-- Where do those ingredients come from before they get to the store? If you're not sure, make your best educated guess!",
+      "question": "Where do those ingredients come from before they get to the store? If you're not sure, make your best educated guess!",
       "options": ["farm", "store", "the ground"]
     }
   },
   {
     "q9": {
       "question": "How many cows do you think are in a typical hamburger?",
-      "options": [
-        "10 miles",
-        "100 miles",
-        "500 miles",
-        "1000 miles",
-        "more than 1000 miles"
-      ]
+      "options": ["1", "40", "100", "400", "1000"]
     }
   },
   {
