@@ -1,22 +1,24 @@
-.form-label {
-  align-self: flex-start;
-  text-align: left;
-  width: 20%;
-  font-size: 1em;
+.form-group.grid {
+  flex-direction: column;
 }
 
-.checkbox-group {
+.grid-group {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: space-around;
   align-items: flex-end;
   margin-top: 3vmin;
   width: 100%;
   height: auto;
+  border: 1px solid black;
 }
 
-.checkbox-group.checkbox {
-  flex-direction: column;
+.grid-label {
+  /* background-color: purple; */
+  text-align: left;
+  width: 100%;
+  font-size: 1em;
+  padding-left: 1%;
 }
 
 .checkbox-group.radio {

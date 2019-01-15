@@ -13,7 +13,7 @@ const Select = props => (
       <option value="">{props.placeholder}</option>
       {props.options.map(opt => {
         return (
-          <option key={opt} value={opt}>
+          <option className={opt.split(" ")[0]} key={opt} value={opt}>
             {opt}
           </option>
         );

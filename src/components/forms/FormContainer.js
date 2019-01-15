@@ -1,10 +1,14 @@
 import React from "react";
-import CheckboxOrRadioGroup from "./RadioInput";
-import RadioGridInput from "./RadioGridInput";
+import Amplify, { graphqlOperation } from "aws-amplify";
 
+import RadioGridInput from "./RadioGridInput";
 import TextArea from "./TextArea";
 import SingleTextInput from "./SingleTextInput";
 import Select from "./Select";
+import CheckboxGroup from "./CheckboxInput";
+import ErrorMessage from "../ErrorMessage";
+import * as mutations from "../../graphql/mutations";
+import { calculateQuizScore } from "../../utils/helpers";
 
 import "./css/FormContainer.css";
 
@@ -21,7 +25,8 @@ class FormContainer extends React.Component {
     q8: "",
     q9: [],
     q10: [],
-    q11: []
+    q11: [],
+    errorMessage: ""
   };
 
   componentDidMount() {}
@@ -37,22 +42,13 @@ class FormContainer extends React.Component {
     this.setState({ [question]: e.target.value });
   };
 
-  // handleRadioClick = e => {
-  //   console.log("handle radio click");
-  //   e.preventDefault();
-  //   const response = e.target.value;
-  //   const question = e.target.className.slice(14);
-  //   // debugger;
-  //   this.setState({ [question]: response });
-  // };
-
   handleRadioGridClick = e => {
     console.log("handle radio grid click");
     const { q5, q10, q11 } = this.state;
 
     // e.preventDefault();
     const response = e.target.value;
-    const question = e.target.className.slice(14);
+    const question = e.target.className.split(" ")[1];
     const subAnswer = e.target.name;
     let answers = [];
     if (question === "q5") {
@@ -63,7 +59,6 @@ class FormContainer extends React.Component {
       answers = q11;
     }
     answers.push({ [subAnswer]: response });
-    debugger;
 
     this.setState({ [question]: answers });
   };
@@ -71,25 +66,119 @@ class FormContainer extends React.Component {
   handleCheckboxClick = e => {
     console.log("handle checkbox click");
     const { q6, q9 } = this.state;
-
-    // e.preventDefault();
     const response = e.target.value;
     const question = e.target.className.slice(14);
-    // debugger;
-    this.setState({ [question]: response });
+    let answers = [];
+
+    if (question === "q6") {
+      answers = q6;
+    } else {
+      answers = q9;
+    }
+    answers.push(response);
+    // e.preventDefault();
+    this.setState({ [question]: answers });
   };
 
-  handleSubmit = () => {
+  handleSubmit = async e => {
     console.log("handleSubmit");
-    this.props.handleSubmit();
+    const { q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11 } = this.state;
+    e.preventDefault();
+    // debugger;
+    const response = {
+      q0: q0,
+      q1: q1,
+      q2: q2,
+      q3: q3,
+      q4: q4,
+      q5: q5,
+      q6: q6,
+      q7: q7,
+      q8: q8,
+      q9: q9,
+      q10: q10,
+      q11: q11
+    };
+
+    if (
+      q0 === "" ||
+      q1 === "" ||
+      q2 === "" ||
+      q3 === "" ||
+      q4 === "" ||
+      !q5.hasOwnProperty([0]) ||
+      q6 === "" ||
+      q7 === "" ||
+      q8 === "" ||
+      !q10.hasOwnProperty([0]) ||
+      !q11.hasOwnProperty([0])
+    ) {
+      this.setState({
+        errorMessage:
+          "You forgot to answer one or more of the questions. Please review your answers and enter any missing responses."
+      });
+    } else {
+      const score = calculateQuizScore(response);
+      debugger;
+
+      return await Amplify.API.graphql(
+        graphqlOperation(mutations.createResponses, {
+          input: response
+        })
+      )
+        .then(res => {
+          console.log("create item res", res);
+          this.props.handleSubmit(res.data.createResponses);
+          return res.data["createResponses"];
+        })
+        .catch(err => {
+          console.log("Problem creating item in db", err);
+          this.setState({ errorMessage: err });
+          return err;
+        });
+      // return graphql
+    }
   };
+
+  handleClearForm(e) {
+    e.preventDefault();
+    this.setState({
+      q0: "",
+      q1: "",
+      q2: "",
+      q3: "",
+      q4: "",
+      q5: [],
+      q6: [],
+      q7: "",
+      q8: "",
+      q9: [],
+      q10: [],
+      q11: []
+    });
+  }
 
   render() {
     const { questions } = this.props;
-    const { q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11 } = this.state;
+    const {
+      q0,
+      q1,
+      q2,
+      q3,
+      q4,
+      q5,
+      q6,
+      q7,
+      q8,
+      q9,
+      q10,
+      q11,
+      errorMessage
+    } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit} className="form-container">
+        {errorMessage !== "" && <ErrorMessage message={errorMessage} />}
         <Select
           name={questions[0].q0.question}
           options={questions[0].q0.options}
@@ -103,14 +192,14 @@ class FormContainer extends React.Component {
           content={q1}
           controlFunc={e => this.setState({ q1: e.target.value })}
           placeholder="Yes when ..."
-          name="name"
+          name={questions[1].q1.question}
           inputType="text"
         />
         <TextArea
           id="q2"
           resize={true}
           name={questions[2].q2.question}
-          rows={3}
+          rows={5}
           content={q2}
           controlFunc={this.handleInput}
         />
@@ -137,7 +226,7 @@ class FormContainer extends React.Component {
           controlFunc={this.handleRadioGridClick}
           selectedOption={q5}
         />
-        <CheckboxOrRadioGroup
+        <CheckboxGroup
           setName={questions[6].q6.question}
           options={questions[6].q6.options}
           controlFunc={this.handleCheckboxClick}
@@ -153,20 +242,20 @@ class FormContainer extends React.Component {
           placeholder="Pick the best option"
           id="q7"
         />
-        <Select
+        <SingleTextInput
+          title={questions[8].q8.question}
+          content={q8}
+          controlFunc={e => this.setState({ q8: e.target.value })}
+          placeholder="I think..."
           name={questions[8].q8.question}
-          options={questions[8].q8.options}
-          controlFunc={this.handleInput}
-          selectedOption={q8}
-          placeholder="Pick the best option"
-          id="q8"
+          inputType="text"
         />
-        <CheckboxOrRadioGroup
-          setName={questions[9].q9.question}
+        <Select
+          name={questions[9].q9.question}
           options={questions[9].q9.options}
-          controlFunc={this.handleCheckboxClick}
-          selectedOptions={q9}
-          type="checkbox"
+          controlFunc={this.handleInput}
+          selectedOption={q9}
+          placeholder="Pick the best option"
           id="q9"
         />
         <RadioGridInput
@@ -183,10 +272,19 @@ class FormContainer extends React.Component {
           controlFunc={this.handleRadioGridClick}
           selectedOption={q11}
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" className="btn" />
+        <button onClick={this.handleClearForm} className="clear">
+          Clear form
+        </button>
       </form>
     );
   }
 }
 
 export default FormContainer;
+
+// Photo by Bruno Thethe on Unsplash -- bread
+// Photo by rawpixel on Unsplash -- sweets
+// Photo by Zac Cain on Unsplash -- meat
+// Photo by Kimberly Nanney on Unsplash -- Fruit
+// Photo by Anna Pelzer on Unsplash --veggie

@@ -1,7 +1,7 @@
 import React from "react";
 import { keys } from "lodash";
 import "./css/RadioGridInput.css";
-import CheckboxOrRadioGroup from "./RadioInput";
+import RadioGroup from "./RadioInput";
 
 class RadioGridInput extends React.Component {
   renderItem() {
@@ -17,11 +17,11 @@ class RadioGridInput extends React.Component {
     });
 
     return (
-      <div className="checkbox-group">
+      <div className="grid-group">
         {options.map((opt, idx) => {
           // debugger;
           return (
-            <CheckboxOrRadioGroup
+            <RadioGroup
               key={`${this.props.id}${questions[idx]}`}
               setName={questions[idx]}
               options={opt[questions[idx]]}
@@ -39,8 +39,8 @@ class RadioGridInput extends React.Component {
     // const indx = keys(this.props.options);
 
     return (
-      <div>
-        <label className="form-label">{this.props.question}</label>
+      <div className="form-group grid">
+        <label className="grid-label">{this.props.setName}</label>
         {this.renderItem()}
       </div>
     );

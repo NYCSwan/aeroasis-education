@@ -1,26 +1,23 @@
 import React from "react";
-import "./css/RadioInput.css";
+import "./css/CheckboxInput.css";
 
-const RadioGroup = props => (
+const CheckboxGroup = props => (
   <div
-    className={`radio-container-${props.type}`}
+    className={`checkbox-container-${props.type}`}
     key={`${props.id}${props.setName}`}
   >
-    <label className="form-label">{props.setName}</label>
-    <div className={`radio-group ${props.type}`}>
+    <label className="checkbox-label">{props.setName}</label>
+    <div className={`checkbox-group ${props.type}`}>
       {props.options.map((opt, idx) => {
-        const check = props.selectedOptions.filter(opt => opt[props.setName]);
-
+        // debugger;
         return (
           <label key={opt} className="form-label capitalize">
             <input
-              className={`form-radio ${props.id}`}
+              className={`form-checkbox ${props.id}`}
               name={props.setName}
               onChange={props.controlFunc}
               value={opt}
-              checked={
-                check.hasOwnProperty([0]) && check[0][props.setName] === opt
-              }
+              checked={props.selectedOptions.includes(opt)}
               type={props.type}
             />{" "}
             {opt}
@@ -31,7 +28,7 @@ const RadioGroup = props => (
   </div>
 );
 
-// type RadioGroup = {
+// type CheckboxGroup = {
 // title: String,
 // type: String,
 // setName: String,
@@ -40,4 +37,4 @@ const RadioGroup = props => (
 // controlFunc: React.PropTypes.func.isRequired
 // };
 
-export default RadioGroup;
+export default CheckboxGroup;

@@ -1,3 +1,7 @@
+main {
+  display: block;
+}
+
 .form-container {
   background-color: #eee;
   display: flex;
@@ -6,4 +10,20 @@
   justify-content: space-evenly;
   align-items: flex-start;
   padding: 2%;
+}
+
+.btn {
+  align-self: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: green;
+  width: 150px;
+  height: 40px;
+  color: black;
+}
+
+.clear {
+  color: grey;
+  font-size: 0.8em;
+  align-self: center;
 }
