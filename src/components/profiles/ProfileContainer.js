@@ -11,7 +11,8 @@ class ProfileContainer extends Component {
   componentDidMount() {
     const { score } = this.props;
 
-    if (score !== "") {
+    if (score !== []) {
+      // debugger;
       this.setState({ profile: CulinaryProfiles[0] });
     } else {
       this.setState({ profile: CulinaryProfiles[1] });
@@ -22,13 +23,12 @@ class ProfileContainer extends Component {
 
   render() {
     const { profile } = this.state;
-    // const newProfile = CulinaryProfiles[0];
+    const newProfile = CulinaryProfiles[0];
     if (profile === {}) return;
 
-    // debugger;
     return (
       <div className="profile-container">
-        <ProfileDetails profile={profile} />
+        <ProfileDetails profile={newProfile} />
       </div>
     );
   }

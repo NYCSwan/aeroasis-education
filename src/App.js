@@ -5,6 +5,7 @@ import FormContainer from "./components/forms/FormContainer";
 import Questionnaire from "./Questionnaire.json";
 import awsmobile from "./aws-exports";
 import ProfileContainer from "./components/profiles/ProfileContainer";
+import { calculateQuizScore } from "./utils/helpers";
 import "./App.css";
 
 Amplify.configure(awsmobile);
@@ -13,7 +14,7 @@ class App extends Component {
   state = {
     value: "",
     toggleForm: false,
-    score: ""
+    scores: [3, 5]
   };
 
   componentDidMount() {
@@ -21,8 +22,11 @@ class App extends Component {
     // console.log("amplify", Amplify.API);
   }
 
-  handleSubmit = score => {
-    this.setState({ score });
+  handleSubmit = response => {
+    const score = calculateQuizScore(response);
+    debugger;
+    this.setState({ scores: score });
+
     this.toggleForm();
   };
 
@@ -33,7 +37,7 @@ class App extends Component {
   }
 
   render() {
-    const { toggleForm, score } = this.state;
+    const { toggleForm, scores } = this.state;
 
     return (
       <main className="App">
@@ -42,13 +46,9 @@ class App extends Component {
           <h2>Aeroasis Education Lesson 1:</h2>
           <h4>Student Questionnaire</h4>
         </header>
-        <h4>
-          Answer the following questions about your eating habits and food
-          generally. There are no right answers when it comes to this quiz. It's
-          a chance to learn more about yourself!
-        </h4>
-        {toggleForm ? (
-          <ProfileContainer score={score} />
+
+        {toggleForm && scores.hasOwnProperty([0]) ? (
+          <ProfileContainer score={scores[0]} />
         ) : (
           <FormContainer
             questions={Questionnaire}
