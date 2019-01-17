@@ -1,0 +1,34 @@
+.auth-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.auth-body {
+  width: 70%;
+  height: 50vmin;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+}
+.auth-info {
+  padding: 10px;
+  text-align: justify;
+}
+.auth-label {
+  text-align: left;
+}
+
+.auth-form {
+  display: flex;
+  flex-flow: column wrap;
+  /* justify-content: space-around; */
+  align-items: flex-start;
+  width: 80%;
+  border-bottom: 3px solid rgb(110, 179, 1);
+}
+.auth.btn {
+  align-self: center;
+}
