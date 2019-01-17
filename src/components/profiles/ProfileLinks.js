@@ -7,7 +7,13 @@ const ProfileLinks = props => (
     <p className="sub-header">Take a look at the other consumer profiles!</p>
     {props.profiles.map(profile => {
       return (
-        <button className="btn-link" onClick={props.handleBtnClick}>
+        <button
+          value="consumerProfile"
+          disabled={profile.profile.type === props.currentConsumerProfile.type}
+          key={profile.profile.type}
+          className="btn-link"
+          onClick={props.handleBtnClick}
+        >
           {profile.profile.type}
         </button>
       );
@@ -15,9 +21,11 @@ const ProfileLinks = props => (
     {props.energy.map(item => {
       return (
         <button
+          value="energyProfile"
           className="btn-link"
+          key={item.profile.type}
           onClick={props.handleBtnClick}
-          disabled={item.profile.type === props.currentProfile.type}
+          disabled={item.profile.type === props.currentEnergyProfile.type}
         >
           {item.profile.type}
         </button>

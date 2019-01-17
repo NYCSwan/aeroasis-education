@@ -19,17 +19,17 @@ class App extends Component {
     scores: [
       {
         type: "energy",
-        score: 0
+        score: 10
       },
       {
         type: "consumer",
-        score: 0
+        score: 10
       }
     ]
   };
 
   componentDidMount() {
-    Amplify.Logger.LOG_LEVEL = "INFO";
+    // Amplify.Logger.LOG_LEVEL = "INFO";
     // console.log("amplify", Amplify.API);
   }
 
