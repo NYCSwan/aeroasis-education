@@ -8,7 +8,7 @@ const Score = props => (
     <div className="scores">
       {props.scores.map(score => {
         return (
-          <h3>
+          <h3 key={score.type}>
             {score.type.toUpperCase()}: {score.score}
           </h3>
         );

@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   animation: border-blink 3s infinite linear;
+  margin-bottom: 5%;
 }
 
 @keyframes border-blink {

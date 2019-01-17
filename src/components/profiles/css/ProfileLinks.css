@@ -9,6 +9,7 @@
 
 .sub-header {
   width: 100%;
+  padding-bottom: 2em;
 }
 
 .btn-link {
@@ -18,5 +19,5 @@
   font-size: 18;
   text-decoration: none;
   background-color: rgb(110, 179, 1);
-  margin-bottom: 20px;
+  margin-bottom: 10%;
 }

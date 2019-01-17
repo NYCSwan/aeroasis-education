@@ -14,8 +14,8 @@ Amplify.configure(awsmobile);
 
 class App extends Component {
   state = {
-    toggleForm: false,
-    auth: false,
+    toggleForm: true,
+    auth: true,
     scores: [
       {
         type: "energy",
