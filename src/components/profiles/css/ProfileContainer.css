@@ -1,0 +1,9 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  align-items: flex-start;
+  margin-top: 5%;
+  background-color: #e3e3e3;
+}

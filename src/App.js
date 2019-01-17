@@ -2,18 +2,30 @@ import React, { Component } from "react";
 import Amplify from "aws-amplify";
 import logo from "./aeFullLogo.png";
 import FormContainer from "./components/forms/FormContainer";
-import Questionnaire from "./Questionnaire.json";
+import Questionnaire from "./assets/libs/Questionnaire.json";
 import awsmobile from "./aws-exports";
 import ProfileContainer from "./components/profiles/ProfileContainer";
+import AuthContainer from "./components/auth/AuthContainer";
+import { calculateQuizScore } from "./utils/helpers";
+
 import "./App.css";
 
 Amplify.configure(awsmobile);
 
 class App extends Component {
   state = {
-    value: "",
-    toggleForm: false,
-    score: ""
+    toggleForm: true,
+    auth: true,
+    scores: [
+      {
+        type: "energy",
+        score: 0
+      },
+      {
+        type: "consumer",
+        score: 0
+      }
+    ]
   };
 
   componentDidMount() {
@@ -21,8 +33,16 @@ class App extends Component {
     // console.log("amplify", Amplify.API);
   }
 
-  handleSubmit = score => {
-    this.setState({ score });
+  handleEmail = e => {
+    this.setState({ auth: true });
+  };
+
+  handleSubmit = response => {
+    const score = calculateQuizScore(response);
+
+    // debugger;
+    this.setState({ scores: score });
+
     this.toggleForm();
   };
 
@@ -33,22 +53,22 @@ class App extends Component {
   }
 
   render() {
-    const { toggleForm, score } = this.state;
+    const { toggleForm, scores, auth } = this.state;
+
+    if (auth === false) {
+      return <AuthContainer handleEmail={this.handleEmail} />;
+    }
 
     return (
-      <main className="App">
+      <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Aeroasis Education Lesson 1:</h2>
           <h4>Student Questionnaire</h4>
         </header>
-        <h4>
-          Answer the following questions about your eating habits and food
-          generally. There are no right answers when it comes to this quiz. It's
-          a chance to learn more about yourself!
-        </h4>
-        {toggleForm ? (
-          <ProfileContainer score={score} />
+
+        {toggleForm === true && scores[0].score > 0 ? (
+          <ProfileContainer scores={scores} />
         ) : (
           <FormContainer
             questions={Questionnaire}
@@ -56,7 +76,7 @@ class App extends Component {
           />
         )}
         <footer className="App-link">(C)2019 Aeroasis</footer>
-      </main>
+      </div>
     );
   }
 }

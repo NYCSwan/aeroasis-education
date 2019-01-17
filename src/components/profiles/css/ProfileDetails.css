@@ -1,0 +1,54 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-self: center;
+  padding-bottom: 5vmin;
+}
+
+.profile-adventurous {
+  align-self: center;
+  width: 30%;
+  height: 30%;
+  padding: 5%;
+}
+aside {
+  width: inherit;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-self: center;
+}
+
+ul {
+  border: 15px solid #4f5283;
+  padding: 10%;
+  width: 20%;
+  height: 150px;
+  word-wrap: normal;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul:last-child {
+  width: 50%;
+  height: auto;
+}
+
+.profile-label {
+  color: rgb(110, 179, 1);
+  font-weight: bold;
+  font-size: 34;
+}
+
+li {
+  /* list-style: none; */
+  text-align: left;
+  padding-top: 10px;
+  line-height: 1.5em;
+  width: 120%;
+  font-size: 14px;
+}
