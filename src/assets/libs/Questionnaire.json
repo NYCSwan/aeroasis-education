@@ -1,0 +1,240 @@
+[
+  {
+    "q0": {
+      "question": "What is your favorite type of food to eat?",
+      "options": [
+        "Pastas and grains like rice",
+        "Candy and sweets",
+        "Fruit",
+        "Vegetables",
+        "Meat",
+        "Dairy like milk and cheese",
+        "Salty foods like chips"
+      ]
+    }
+  },
+  {
+    "q1": {
+      "question": "Have you ever grown any plants before this class?",
+      "options": ["Yes", "No"]
+    }
+  },
+  {
+    "q2": {
+      "question": "How does the food you eat affect you throughout your day?",
+      "options": []
+    }
+  },
+  {
+    "q3": {
+      "question": "On a typical day, how often do you eat throughout the day?",
+      "options": [
+        "One meal",
+        "Two meals",
+        "Three big meals",
+        "Three small meals",
+        "More than 3 big meals",
+        "More than 3 small meals"
+      ]
+    }
+  },
+  {
+    "q4": {
+      "question": "If you looked in your kitchen, what would you see more of",
+      "options": [
+        "Canned items",
+        "Fresh items",
+        "Ready-made items",
+        "condiments"
+      ]
+    }
+  },
+  {
+    "q5": {
+      "question": "Where do most of your meals come from each week?",
+      "options": [
+        {
+          "Cook at home with fresh ingredients": [
+            "0x",
+            "1x",
+            "2x",
+            "3x",
+            "4x",
+            "5 or more"
+          ]
+        },
+        {
+          "School cafeteria": ["0x", "1x", "2x", "3x", "4x", "5 or more"]
+        },
+        {
+          "Fast food": ["0x", "1x", "2x", "3x", "4x", "5 or more"]
+        },
+        {
+          "Restaurants": ["0x", "1x", "2x", "3x", "4x", "5 or more"]
+        },
+        {
+          "Prepared foods at home like pizza and frozen meals": [
+            "0x",
+            "1x",
+            "2x",
+            "3x",
+            "4x",
+            "5 or more"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "q6": {
+      "question": "When your family makes dinner at home and there are lots of leftovers, what does your family do with it?",
+      "options": [
+        "Eat it later",
+        "Throw it away",
+        "Give it away",
+        "Feed it to pets",
+        "Compost it"
+      ]
+    }
+  },
+  {
+    "q7": {
+      "question": "Where would you go to buy the ingredients for a hamburger? Choose all that apply.",
+      "options": [
+        "Deli",
+        "Supermarket",
+        "Farmers market",
+        "Farm",
+        "I don't know"
+      ]
+    }
+  },
+  {
+    "q8": {
+      "question": "Where do those ingredients come from before they get to the store? If you're not sure, make your best educated guess!",
+      "options": ["farm", "store", "the ground"]
+    }
+  },
+  {
+    "q9": {
+      "question": "How many cows do you think are in a typical hamburger?",
+      "options": ["1", "40", "100", "400", "1000"]
+    }
+  },
+  {
+    "q10": {
+      "question": "If you are at lunch, and are given milk, a chicken sandwich (or veggie if you're a vegetarian), some pickles, and an apple, what do you do with this food? Anything you don’t eat?",
+      "options": [
+        {
+          "Chicken sandwich": ["Eat it", "Throw it away", "Share with someone"]
+        },
+        {
+          "Pickles": ["Eat it", "Throw it away", "Share with someone"]
+        },
+        {
+          "Apple": ["Eat it", "Throw it away", "Share with someone"]
+        },
+        {
+          "Milk": ["Eat it", "Throw it away", "Share with someone"]
+        }
+      ]
+    }
+  },
+  {
+    "q11": {
+      "question": "On a scale of 1 to 5, how much interest do you have in the following subjects?",
+      "options": [
+        {
+          "farming": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Botany (plant science)": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "art": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Robotics": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Cooking": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Nature": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Environmental Science": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Reading": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        },
+        {
+          "Public Speaking (talking in front of groups)": [
+            "Love it!",
+            "Like it but not my favorite.",
+            "Meh. Don't have any opinion.",
+            "Not my thing.",
+            "Hate it!",
+            "I don't know what this is."
+          ]
+        }
+      ]
+    }
+  }
+]

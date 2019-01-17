@@ -1,0 +1,71 @@
+[
+  {
+    "profile": {
+      "type": "adventurous eater",
+      "min": 20,
+      "max": 50,
+      "description": "An adventurous eater likes to try new foods. You explore your dinner options, maybe checking all the isles at the supermarket for things you’d like to try. Have you cooked lately? Adventurous eaters like to cook. You tend to consciously make decisions about what you eat, but are willing to take a leap to see what something is about. You are interested in where foods come from, what the story is behind their origins and sometimes you think, “huh, didn’t know these chips were made in Thailand.” when you check out a bag of chips.",
+      "pros": [
+        "Open to new foods",
+        "conscious of waste",
+        "likely to be interested in the food they eat",
+        "maybe even quality."
+      ],
+      "cons": [
+        "Likely also open to fast food",
+        "may sometimes put experience over conservation or sustainability"
+      ],
+      "short": [
+        "Like to try new foods",
+        "Are willing to explore food options",
+        "Try to conserve resources by recycling or using less of something",
+        "Are not picky about what you eat. You are ready to put aside preconceptions about foods and try them.",
+        "Enjoy indulging in culinary experiences",
+        "Have a sense of conscious decision making behind what you eat"
+      ]
+    }
+  },
+  {
+    "profile": {
+      "type": "picky eater",
+      "min": 1,
+      "max": 20,
+      "description": "You know what you like and what you don’t like to eat. You probably have your favorite foods and places to eat and you don’t like to stray too far away from what you know. When someone introduces something new, you may try it if it reminds you of something you like but will say, “No thanks.” otherwise. The look and taste of what you eat is more important than it’s nutrition.  Did you know it takes someone trying a new food 10-16 times before liking it?",
+      "pros": [
+        "You have strong opinions and know what you like.",
+        "You have time to explore other aspects of life because food is not a priority."
+      ],
+      "cons": [
+        "You miss out on food experiences that you may actually enjoy"
+      ],
+      "short": [
+        "Do not typically like to try new foods",
+        "Have rules about what you eat that typically deal with texture, smell or color of something you eat",
+        "Are selective about what they will eat, healthy or not",
+        "Are prone to eating for taste and pleasure over nutrition"
+      ]
+    }
+  },
+  {
+    "profile": {
+      "type": "potpourri eater",
+      "min": 40,
+      "max": 60,
+      "description": "For a potpourri eater, food is fuel. What did you have for breakfast yesterday? Can’t remember? Was it the same ol’ thing? You may not think much about what you’re eating as long as it is convenient and tastes good. You may not be interested in where your food comes from or how it is prepared.\n\nDid you know that food can affect your mood? It’s true! Think about when you eat a donut or sugary soda. You feel great and have lots of energy, until you crash. According to research published by the University of Illinois, eating regular meals and snacks at the same times every day helps keep your blood sugar levels steady. Eating at regular intervals helps to ensure that your body has a continuous source of fuel, and this may assist in keeping your mood stable.",
+      "pros": [
+        "You are easy to please",
+        "You know food is energy",
+        "You are open to new things if they are presented properly"
+      ],
+      "cons": [
+        "Because you don’t think much about what you eat, you go for what is easy and that might be more processed and fast foods than is recommended."
+      ],
+      "short": [
+        "Do not typically like to try new foods, once in a while is OK but you’d prefer to eat something you know is good.",
+        "You have your go-to favorites meals",
+        "Tend to eat the same things you’ve always eaten",
+        "DMay not care whether the food you consume is good for your body"
+      ]
+    }
+  }
+]
