@@ -1,0 +1,12 @@
+.single-text-input {
+  width: 61%;
+  border: 1px solid "rgb(68,68,68)";
+  align-self: center;
+  outline: none;
+  height: 2em;
+}
+
+.form-label {
+  text-align: left;
+  width: 100%;
+}

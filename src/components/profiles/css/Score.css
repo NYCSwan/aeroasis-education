@@ -1,0 +1,38 @@
+.score-container {
+  width: 98%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  animation: border-blink 3s infinite linear;
+  margin-bottom: 5%;
+}
+
+@keyframes border-blink {
+  0% {
+    border: 9px dotted rgb(110, 179, 1);
+  }
+  50% {
+    border: 10px dotted #4f5283;
+  }
+  100% {
+    border: 9px dotted rgb(110, 179, 1);
+  }
+}
+
+.score-header {
+  color: #4f5283;
+  font-size: 50;
+  font-weight: bold;
+}
+.scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+h3 {
+  color: #4f5283;
+  font-size: 40;
+  font-weight: bold;
+}

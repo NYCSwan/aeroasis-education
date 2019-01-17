@@ -1,145 +1,81 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import Amplify from "aws-amplify";
+import logo from "./aeFullLogo.png";
+import FormContainer from "./components/forms/FormContainer";
+import Questionnaire from "./assets/libs/Questionnaire.json";
+import awsmobile from "./aws-exports";
+import ProfileContainer from "./components/profiles/ProfileContainer";
+import AuthContainer from "./components/auth/AuthContainer";
+import { calculateQuizScore } from "./utils/helpers";
+
 import "./App.css";
+
+Amplify.configure(awsmobile);
 
 class App extends Component {
   state = {
-    value: ""
+    toggleForm: true,
+    auth: true,
+    scores: [
+      {
+        type: "energy",
+        score: 0
+      },
+      {
+        type: "consumer",
+        score: 0
+      }
+    ]
   };
 
-  handleChange = e => {
-    this.setState({ value: e.target.value });
+  componentDidMount() {
+    Amplify.Logger.LOG_LEVEL = "INFO";
+    // console.log("amplify", Amplify.API);
+  }
+
+  handleEmail = e => {
+    this.setState({ auth: true });
   };
 
-  handleSubmit = e => {
-    console.log("handle submit");
-    e.preventDefault();
+  handleSubmit = response => {
+    const score = calculateQuizScore(response);
+
+    // debugger;
+    this.setState({ scores: score });
+
+    this.toggleForm();
   };
+
+  toggleForm() {
+    const { toggleForm } = this.state;
+
+    this.setState({ toggleForm: !toggleForm });
+  }
 
   render() {
+    const { toggleForm, scores, auth } = this.state;
+
+    if (auth === false) {
+      return <AuthContainer handleEmail={this.handleEmail} />;
+    }
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Aeroasis Education Lesson 1: Student Questionnaire</h2>
-          <h4>
-            Answer the following questions about your eating habits and food
-            generally. There are no right answers when it comes to this quiz.
-            It's a chance to learn more about yourself!
-          </h4>
+          <h2>Aeroasis Education Lesson 1:</h2>
+          <h4>Student Questionnaire</h4>
         </header>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            How many times a day do you typically eat?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Where does most of your meals come from each week?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            If you looked in your fridge, would you see more
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            What is your favorite type of food to eat?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Where would you go to buy the ingredients for a hamburger? Choose
-            all that apply.
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            If you are at lunch, and are given milk, a chicken sandwich (or
-            veggie if you're a vegetarian), some pickles, and an apple, what do
-            you do with this food? Anything you don’t eat?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            If your family makes dinner at home, and there are lots of
-            leftovers, what does your family do with them?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            What is yourHow far do you think the average tomato will travel to
-            reach your supermarket?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            How does the food you eat affect you throughout your day?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            Have you ever grown any plants before this class? If so tell us
-            about it?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            On a scale of 1 to 5, how much interest do you have in the following
-            subjects?
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+
+        {toggleForm === true && scores[0].score > 0 ? (
+          <ProfileContainer scores={scores} />
+        ) : (
+          <FormContainer
+            questions={Questionnaire}
+            handleSubmit={this.handleSubmit}
+          />
+        )}
+        <footer className="App-link">(C)2019 Aeroasis</footer>
       </div>
     );
   }

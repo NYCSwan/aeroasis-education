@@ -1,0 +1,13 @@
+.error-message-container {
+  border-color: red;
+  border-width: 1;
+  width: 60%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: auto;
+  align-self: center;
+}
+.error-message {
+  color: red;
+  align-self: center;
+}

@@ -1,0 +1,30 @@
+.form-group.grid {
+  flex-direction: column;
+}
+
+.grid-group {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 3vmin;
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+
+.grid-label {
+  /* background-color: purple; */
+  text-align: left;
+  width: 100%;
+  font-size: 1em;
+  padding-left: 1%;
+}
+
+.checkbox-group.radio {
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  font-size: 0.8em;
+  align-content: center;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "profile": {
+      "type": "high energy user",
+      "min": 20,
+      "max": 50,
+      "description": "You are fortunate to have a lot of options about what you eat as a high energy user. You take advantage of those options. Perhaps you eat out a lot or eat a lot of meat and dairy. Did you know that the average meal travels 1,200 kilometres (745 miles) from the farm to your plate! That’s like traveling from New York to Chicago for every meal. When you purchase prepackaged foods like chips or frozen meals, that food has to travel far distances to reach you.\n\n\nMost people are omnivores, meaning they eat both meat and plants. How often do you eat meat? Livestock production accounts for 70% of all agricultural land use, occupies 30% of the planet’s land surface and is responsible for 18% of rgb(110,179,1)house gases which cause climate change. Growing animals for food is also inefficient. It takes about five to seven kilograms (12 to 18 pounds) of grain to produce one kilogram (2.2 pounds) of beef. Each animal takes a lot of energy and water to produce, process, and transport."
+    }
+  },
+  {
+    "profile": {
+      "type": "low energy user",
+      "min": 1,
+      "max": 19,
+      "description": "As a low energy user you (or your family) make decisions that conserve energy. You choose to buy local or organic foods or cook dinner from scratch.  Food grown closer to home produces fewer transportation emissions, is fresher and supports people in your community. As the distance food travels decreases, so does the need for processing and refrigeration to reduce spoilage.\n\n\nVegetarians and people who consume fewer animal products like meat and dairy also use less energy because plants need less water, land to grow and care to produce. Being a low energy consumer has health benefits! Many studies have show that plant-based diets (eating mostly fruits, veggies and healthy grains) provide better support for your brain and body as you’ll read in the next section."
+    }
+  }
+]

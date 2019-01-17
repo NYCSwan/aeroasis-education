@@ -1,0 +1,32 @@
+.radio-container-radio {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-top: 1vmin;
+}
+
+.form-label {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: rgb(68, 68, 68);
+  width: 20%;
+}
+
+.radio-group {
+  display: flex;
+  flex-flow: row nowrap;
+  /* height: 20vmin; */
+  width: 90%;
+  /* background-color: "#e3e3e3"; */
+}
+
+.form-label.capitalize {
+  color: rgb(68, 68, 68);
+  height: auto;
+}
+
+.form-radio {
+  height: auto;
+  /* width: 90%; */
+}

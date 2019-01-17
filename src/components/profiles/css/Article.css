@@ -1,0 +1,19 @@
+.article-container {
+  display: flex;
+  flex-flow: column wrap;
+  height: auto;
+  width: 90%;
+  align-self: center;
+  padding-bottom: 5%;
+}
+.article-title {
+  color: blue;
+  font-size: 24;
+  font-weight: bold;
+}
+
+.article-text {
+  text-align: left;
+  line-height: 1.5em;
+  letter-spacing: normal;
+}
