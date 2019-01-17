@@ -14,8 +14,8 @@ Amplify.configure(awsmobile);
 
 class App extends Component {
   state = {
-    toggleForm: true,
-    auth: true,
+    toggleForm: false,
+    auth: false,
     scores: [
       {
         type: "energy",
@@ -29,7 +29,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    Amplify.Logger.LOG_LEVEL = "INFO";
+    // Amplify.Logger.LOG_LEVEL = "INFO";
     // console.log("amplify", Amplify.API);
   }
 

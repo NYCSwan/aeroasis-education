@@ -7,7 +7,11 @@ import "./css/ProfileDetails.css";
 
 const ProfileDetails = ({ profile }) => (
   <div className="details-container">
-    <img src={picky} className={`profile-${profile.type}`} />
+    <img
+      src={profile.type === "picky eater" ? picky : potpourri}
+      className={`profile-${profile.type}`}
+      alt="person eating"
+    />
     <h2>{profile.type.toUpperCase()}</h2>
     <summary>{profile.description}</summary>
     <aside>

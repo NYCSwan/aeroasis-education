@@ -20,10 +20,6 @@ class ProfileContainer extends Component {
 
   componentDidMount() {
     const { scores } = this.props;
-    // if EnergyProfiles.min > score.energy > EnergyProfiles.max
-    // return profile
-    // if CulinaryProfiles.min > score.consumer > CulinaryProfiles.max
-    // return profile
     EnergyProfiles.map(profile => {
       if (profile.profile.min < scores[0].score < profile.profile.max) {
         // debugger;
@@ -44,15 +40,25 @@ class ProfileContainer extends Component {
 
   handleBtnClick = e => {
     e.preventDefault();
-    const newProfile = e.target.value;
-    debugger;
-    this.setState({ profile: newProfile });
+    const button = e.target.innerText;
+    const profile = e.target.value;
+    let newProfile = [];
+
+    if (profile === "consumerProfile") {
+      newProfile = CulinaryProfiles.filter(
+        profile => profile.profile.type === button
+      );
+      this.setState({ consumerProfile: newProfile[0].profile });
+    } else {
+      newProfile = EnergyProfiles.filter(
+        profile => profile.profile.type === button
+      );
+      this.setState({ energyProfile: newProfile[0].profile });
+    }
   };
 
   render() {
     const { energyProfile, consumerProfile } = this.state;
-    // const newProfile = CulinaryProfiles[0];
-    // if (consumerProfile === {} || energyProfile === {}) return;
 
     return (
       <main className="profile-container">
@@ -69,7 +75,8 @@ class ProfileContainer extends Component {
         <ProfileLinks
           profiles={CulinaryProfiles}
           energy={EnergyProfiles}
-          currentProfile={consumerProfile}
+          currentConsumerProfile={consumerProfile}
+          currentEnergyProfile={energyProfile}
           handleBtnClick={this.handleBtnClick}
         />
       </main>
