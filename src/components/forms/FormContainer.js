@@ -175,7 +175,7 @@ class FormContainer extends React.Component {
     } = this.state;
 
     return (
-      <div className="form">
+      <main className="form">
         <h4>
           Answer the following questions about your eating habits and thoughts
           on food generally. There are no right answers when it comes to this
@@ -281,7 +281,7 @@ class FormContainer extends React.Component {
             Clear form
           </button>
         </form>
-      </div>
+      </main>
     );
   }
 }
