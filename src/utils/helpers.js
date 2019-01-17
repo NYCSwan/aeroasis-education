@@ -25,7 +25,17 @@ export const calculateQuizScore = response => {
   });
   const score1 = calculateProfileScore(profileAnswers);
   const score2 = calculateEnergyScore(energyAnswers);
-  const total = [score1, score2];
+  const total = [
+    {
+      type: "energy",
+      score: score2
+    },
+    {
+      type: "consumer",
+      score: score1
+    }
+  ];
+
   // debugger;
   return total;
 };
@@ -160,12 +170,9 @@ export const calculateEnergyScore = response => {
     } else if (question === "q10") {
       console.log("answer", answer);
     } else {
-      debugger;
       score += answerKey[question][answer];
     }
   });
-
-  // debugger;
   return score;
 };
 
