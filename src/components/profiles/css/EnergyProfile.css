@@ -1,0 +1,24 @@
+.energy-profile {
+  display: flex;
+  flex-flow: column wrap;
+  width: auto;
+}
+
+.energy-scores {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px solid rgb(110, 179, 1);
+  border-radius: 25%;
+}
+
+.energy-text {
+  color: rgb(110, 179, 1);
+}
+
+.energy-summary {
+  text-align: left;
+  line-height: 1.5em;
+  font-size: 1em;
+}
