@@ -16,7 +16,6 @@ export const getResponses = `query GetResponses($id: ID!) {
     q9
     q10
     q11
-    email
   }
 }
 `;
@@ -40,7 +39,6 @@ export const listResponsess = `query ListResponsess(
       q9
       q10
       q11
-      email
     }
     nextToken
   }

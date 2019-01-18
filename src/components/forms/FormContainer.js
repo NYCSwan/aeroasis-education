@@ -13,9 +13,9 @@ import "./css/FormContainer.css";
 
 class FormContainer extends React.Component {
   state = {
-    q0: "Candy and sweets",
-    q1: "yes",
-    q2: "ghjgjhgh",
+    q0: "",
+    q1: "",
+    q2: "",
     q3: "",
     q4: "",
     q5: [],
@@ -96,7 +96,8 @@ class FormContainer extends React.Component {
       q8: q8,
       q9: q9,
       q10: q10,
-      q11: q11
+      q11: q11,
+      email: this.props.email
     };
 
     if (
@@ -131,7 +132,7 @@ class FormContainer extends React.Component {
         })
         .catch(err => {
           console.log("Problem creating item in db", err);
-          this.setState({ errorMessage: err });
+          this.setState({ errorMessage: err.message });
           return err;
         });
       // return graphql
@@ -152,7 +153,8 @@ class FormContainer extends React.Component {
       q8: "",
       q9: [],
       q10: [],
-      q11: []
+      q11: [],
+      errorMessage: ""
     });
   }
 

@@ -16,7 +16,6 @@ export const createResponses = `mutation CreateResponses($input: CreateResponses
     q9
     q10
     q11
-    email
   }
 }
 `;
@@ -35,7 +34,6 @@ export const updateResponses = `mutation UpdateResponses($input: UpdateResponses
     q9
     q10
     q11
-    email
   }
 }
 `;
@@ -54,7 +52,6 @@ export const deleteResponses = `mutation DeleteResponses($input: DeleteResponses
     q9
     q10
     q11
-    email
   }
 }
 `;

@@ -9,13 +9,13 @@ import AuthContainer from "./components/auth/AuthContainer";
 import { calculateQuizScore } from "./utils/helpers";
 
 import "./App.css";
-
 Amplify.configure(awsmobile);
 
 class App extends Component {
   state = {
     toggleForm: false,
     auth: false,
+    email: "",
     scores: [
       {
         type: "energy",
@@ -33,8 +33,8 @@ class App extends Component {
     // console.log("amplify", Amplify.API);
   }
 
-  handleEmail = e => {
-    this.setState({ auth: true });
+  handleEmail = async e => {
+    this.setState({ auth: true, email: e });
   };
 
   handleSubmit = response => {
@@ -53,7 +53,7 @@ class App extends Component {
   }
 
   render() {
-    const { toggleForm, scores, auth } = this.state;
+    const { toggleForm, scores, auth, email } = this.state;
 
     if (auth === false) {
       return <AuthContainer handleEmail={this.handleEmail} />;
@@ -73,6 +73,7 @@ class App extends Component {
           <FormContainer
             questions={Questionnaire}
             handleSubmit={this.handleSubmit}
+            email={email}
           />
         )}
         <footer className="App-link">(C)2019 Aeroasis</footer>

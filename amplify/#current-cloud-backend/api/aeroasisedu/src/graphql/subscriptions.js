@@ -16,7 +16,6 @@ export const onCreateResponses = `subscription OnCreateResponses {
     q9
     q10
     q11
-    email
   }
 }
 `;
@@ -35,7 +34,6 @@ export const onUpdateResponses = `subscription OnUpdateResponses {
     q9
     q10
     q11
-    email
   }
 }
 `;
@@ -54,7 +52,6 @@ export const onDeleteResponses = `subscription OnDeleteResponses {
     q9
     q10
     q11
-    email
   }
 }
 `;

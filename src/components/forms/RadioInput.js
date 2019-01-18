@@ -6,7 +6,7 @@ const RadioGroup = props => (
     className={`radio-container-${props.type}`}
     key={`${props.id}${props.setName}`}
   >
-    <label className="form-label">{props.setName}</label>
+    <label className="form-label-radio">{props.setName}</label>
     <div className={`radio-group ${props.type}`}>
       {props.options.map((opt, idx) => {
         const check = props.selectedOptions.filter(opt => opt[props.setName]);

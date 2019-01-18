@@ -12,6 +12,7 @@ type responses {
   q9: [String]
   q10: [String]
   q11: [String]
+  email: String
 }
 
 enum ModelSortDirection {
@@ -93,6 +94,7 @@ input ModelresponsesFilterInput {
   q9: ModelStringFilterInput
   q10: ModelStringFilterInput
   q11: ModelStringFilterInput
+  email: ModelStringFilterInput
   and: [ModelresponsesFilterInput]
   or: [ModelresponsesFilterInput]
   not: ModelresponsesFilterInput
@@ -117,6 +119,7 @@ input CreateResponsesInput {
   q9: [String]
   q10: [String]
   q11: [String]
+  email: String
 }
 
 input UpdateResponsesInput {
@@ -133,6 +136,7 @@ input UpdateResponsesInput {
   q9: [String]
   q10: [String]
   q11: [String]
+  email: String
 }
 
 input DeleteResponsesInput {
