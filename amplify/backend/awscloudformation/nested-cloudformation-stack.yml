@@ -84,10 +84,10 @@
 				"TemplateURL": "https://s3.amazonaws.com/aeroasisedu-20190114120534-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "aeroasisedu",
-					"schemaGraphql": "s3://aeroasisedu-20190114120534-deployment/amplify-appsync-files/schema.graphql.1547492400116",
+					"schemaGraphql": "s3://aeroasisedu-20190114120534-deployment/amplify-appsync-files/schema.graphql.1547843128373",
 					"ResolverBucket": "aeroasisedu-20190114120534-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1547492400116"
+					"DeploymentTimestamp": "1547843128373"
 				}
 			}
 		},
@@ -128,6 +128,13 @@
 					"unauthRoleName": "aeroasisedu-20190114120534-unauthRole",
 					"IAMPrefix": "880058370616"
 				}
+			}
+		},
+		"hostingS3AndCloudFront": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/aeroasisedu-20190114120534-deployment/amplify-cfn-templates/hosting/template.json",
+				"Parameters": {}
 			}
 		}
 	},
