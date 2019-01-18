@@ -19,6 +19,8 @@ export const calculateQuizScore = response => {
       energyAnswers[key] = value;
     } else if (key === "q2") {
       // analyse text ...
+    } else if (key === "email") {
+      console.log("email");
     } else {
       profileAnswers[key] = value;
     }
@@ -176,31 +178,21 @@ export const calculateEnergyScore = response => {
   return score;
 };
 
-// const processAnswers = (key, questions) => {
-//   forEach(response, (answer, question) => {
-//     if (
-//       (question === "q1" && answer.toLowerCase().includes("yes")) ||
-//       (question === "q1" && answer.toLowerCase().includes("yeah"))
-//     ) {
-//       // debugger;
-//       score += answerKey[question].Yes;
-//     } else if (
-//       (question === "q1" && answer.toLowerCase().includes("no")) ||
-//       (question === "q1" && answer.toLowerCase().includes("not"))
-//     ) {
-//       // debugger;
-//       score += answerKey[question].No;
-//     } else if (question === "q5") {
-//       console.log("answer", answer);
-//       // deal with radio grids
-//     } else if (question === "q10") {
-//       console.log("answer", answer);
-//     } else {
-//       debugger;
-//       score += answerKey[question][answer];
-//     }
-//   });
-//
-//   debugger;
-//   return score;
-// };
+// validate email address
+export const validateEmail = email => {
+  const re = /\S+@\S+\.\S+/;
+  return re.test(email);
+};
+
+export const validateHumanity = async key => {
+  return fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    body: JSON.stringify(key)
+  })
+    .then(res => {
+      console.log("captcha", res);
+    })
+    .catch(err => {
+      console.log("err", err);
+    });
+};
