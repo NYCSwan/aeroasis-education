@@ -29,7 +29,7 @@
     "profile": {
       "type": "picky eater",
       "min": 1,
-      "max": 20,
+      "max": 12,
       "description": "You know what you like and what you don’t like to eat. You probably have your favorite foods and places to eat and you don’t like to stray too far away from what you know. When someone introduces something new, you may try it if it reminds you of something you like but will say, “No thanks.” otherwise. The look and taste of what you eat is more important than it’s nutrition.  Did you know it takes someone trying a new food 10-16 times before liking it?",
       "pros": [
         "You have strong opinions and know what you like.",
@@ -49,8 +49,8 @@
   {
     "profile": {
       "type": "potpourri eater",
-      "min": 40,
-      "max": 60,
+      "min": 13,
+      "max": 20,
       "description": "For a potpourri eater, food is fuel. What did you have for breakfast yesterday? Can’t remember? Was it the same ol’ thing? You may not think much about what you’re eating as long as it is convenient and tastes good. You may not be interested in where your food comes from or how it is prepared.\n\nDid you know that food can affect your mood? It’s true! Think about when you eat a donut or sugary soda. You feel great and have lots of energy, until you crash. According to research published by the University of Illinois, eating regular meals and snacks at the same times every day helps keep your blood sugar levels steady. Eating at regular intervals helps to ensure that your body has a continuous source of fuel, and this may assist in keeping your mood stable.",
       "pros": [
         "You are easy to please",
