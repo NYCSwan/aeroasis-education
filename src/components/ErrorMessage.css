@@ -1,13 +1,17 @@
 .error-message-container {
-  border-color: red;
-  border-width: 1;
+  border: red 1px solid;
   width: 60%;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
   height: auto;
   align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .error-message {
   color: red;
+  font-family: "Roboto", sans-serif;
   align-self: center;
 }

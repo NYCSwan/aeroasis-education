@@ -12,4 +12,5 @@ type responses @model {
   q9: [String]
   q10: [String]
   q11: [String]
+  email: String
 }

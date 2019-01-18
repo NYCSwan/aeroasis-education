@@ -24,11 +24,21 @@
 .auth-form {
   display: flex;
   flex-flow: column wrap;
-  /* justify-content: space-around; */
   align-items: flex-start;
   width: 80%;
   border-bottom: 3px solid rgb(110, 179, 1);
 }
+
+.recaptcha {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  height: auto;
+  width: 100%;
+}
+
 .auth.btn {
   align-self: center;
 }
